@@ -17,7 +17,7 @@ const UserDisplay = (props: props) => {
 
   return (
     <>
-      <div className="  flex flex-col gap-2 p-4 w-full bg-slate-200 rounded-lg">
+      <div className="  flex flex-col gap-2 p-4 w-full bg-slate-100 text-black dark:bg-slate-950 shadow-lg dark:text-white  rounded-lg">
         <div className="font-semibold">
           {props.user.firstname + " " + props.user.lastname}{" "}
         </div>

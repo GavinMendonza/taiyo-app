@@ -1,5 +1,7 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Modal from "./Modal";
 import UserList from "./UserList";
+import NoPage from "./NoPage";
 
 export default function Sidebar() {
   return (
@@ -28,19 +30,44 @@ export default function Sidebar() {
               ></path>
             </svg>
           </label>
-          <div className="p-3">
-            <Modal />
+          {/* ----------------------------- */}
+          <BrowserRouter>
+            <Routes>
+              <Route path="/">
+                <Route
+                  index
+                  element={
+                    <div className="p-3">
+                      <Modal />
 
-            <UserList />
-          </div>
+                      <UserList />
+                    </div>
+                  }
+                />
+                <Route path="Dashboard" element={<NoPage />} />{" "}
+                <Route path="*" element={<NoPage />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+
+          {/* ----------------------------- */}
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer" className="drawer-overlay "></label>
           <ul className="menu p-4 w-64 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li>
+              {/*  */}
+              {/* <Link
+                to="/dashboard"
+                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                Home
+              </Link> */}
+
+              {/*  */}
               <a
-                href="#"
+                href="/"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -57,7 +84,7 @@ export default function Sidebar() {
             </li>
             <li>
               <a
-                href="#"
+                href="/dashboard"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
