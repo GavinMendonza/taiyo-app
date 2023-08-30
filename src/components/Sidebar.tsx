@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Modal from "./Modal";
 import UserList from "./UserList";
 import NoPage from "./NoPage";
+import Map from "./Map";
 
 export default function Sidebar() {
   return (
@@ -44,7 +45,7 @@ export default function Sidebar() {
                     </div>
                   }
                 />
-                <Route path="Dashboard" element={<NoPage />} />{" "}
+                <Route path="Dashboard" element={<Map />} />{" "}
                 <Route path="*" element={<NoPage />} />
               </Route>
             </Routes>
