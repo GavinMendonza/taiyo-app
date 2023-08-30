@@ -20,20 +20,10 @@ const UserList = () => {
     seteditUser(currentUser);
   };
 
-  //   let users = [];
-  //   let users: userModel[] = [
-  //     { id: "ab", firstname: "bob", lastname: "mend", status: "active" },
-  //     { id: "ac", firstname: "bobby", lastname: "mend", status: "inactive" },
-  //     { id: "ad", firstname: "shawn", lastname: "mend", status: "active" },
-  //     { id: "ae", firstname: "shawn", lastname: "mend", status: "inactive" },
-  //     { id: "af", firstname: "shawn", lastname: "mend", status: "active" },
-  //   ];
   return (
     <>
       <div className="  grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-        {userData.length == 0 && (
-          <ToastMessage message="No users found!" closeAble={true} />
-        )}
+        {userData.length == 0 && <ToastMessage />}
         {userData.map((values: userModel) => {
           return (
             <UserDisplay

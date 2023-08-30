@@ -4,7 +4,6 @@ import { MdDelete } from "react-icons/md";
 import userModel from "../models/userModel";
 import { useAppDispatch, useAppSelector } from "../reduxStore/hooks";
 import { removeUser } from "../reduxStore/userDataSlice";
-// import EditModal from "./EditModal";
 
 interface props {
   user: userModel;
@@ -35,14 +34,16 @@ const UserDisplay = (props: props) => {
           {props.user.status}
         </div>
         <div className="flex gap-2 w-full justify-between">
-          <button
+          <label
+            htmlFor="editUserModal"
             onClick={() => {
               props.updateData(props.user);
             }}
             className="flex gap-4 place-items-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             <BiSolidPencil /> Edit
-          </button>
+          </label>
+
           <button
             onClick={() => {
               dispatch(removeUser(props.user.id));
